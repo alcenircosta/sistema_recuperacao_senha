@@ -6,7 +6,6 @@ class LoadPage{
         $this->path = $this->dir.$url.$ext;
     }
 public function load(){
-    echo $this->path;
       if(file_exists($this->path)){
         include ($this->path);
       }else{
