@@ -1,3 +1,4 @@
+<?php include_once ("lib/includes.php"); ?>
 <!doctype html>
 <html lang="pt">
   <head>
@@ -11,7 +12,12 @@
   <body>
 <div class="row">
   <div class="col-sm-5 offset-md-3">
-    
+  <?php
+  $url = (isset($_GET['pagina'])) ? $_GET['pagina'] : 'inicio';
+  $ext = '.php';
+  $load = new LoadPage($url,$ext);
+  $load->load();
+  ?>
   </div>
 </div>
     <!-- Scripts -->
