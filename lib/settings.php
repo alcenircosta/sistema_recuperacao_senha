@@ -1,3 +1,3 @@
 <?php
-define("siteDir","http://localhost/rec_senha", TRUE);
+define("siteDir","http://localhost/rec_senha");
 ?>

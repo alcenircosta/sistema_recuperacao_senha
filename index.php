@@ -1,4 +1,6 @@
-<?php include_once ("lib/includes.php"); ?>
+<?php
+ include_once ("lib/includes.php");
+?>
 <!doctype html>
 <html lang="pt">
   <head>
@@ -15,8 +17,7 @@
   <?php
   $url = (isset($_GET['pagina'])) ? $_GET['pagina'] : 'inicio';
   $ext = '.php';
-  $load = new LoadPage($url,$ext);
-  $load->load();
+  load_pages($url,$ext);
   ?>
   </div>
 </div>
