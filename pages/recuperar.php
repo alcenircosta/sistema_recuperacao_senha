@@ -7,7 +7,7 @@
     <input type="hidden" name="recuperarSenha" value="recform" />
 </form>
 
-<?php 
+<?php
 $con = MySql::conect();
-echo check_info($con); 
+echo check_info($con);
 ?>
