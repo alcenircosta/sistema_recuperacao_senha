@@ -12,7 +12,7 @@ class Email{
  private $password = 'kni>3azvb?';
 
 //  RecipientEmail, RecipientName, Subject, Body
-public function send_email($RecipientEmail, $RecipientName, $Subject, $Body){
+public function send_email($RecipientEmail, $Subject, $Body){
     $this->mail = new PHPMailer();
 try {
     $this->mail->isSMTP();                                            // Send using SMTP
@@ -26,7 +26,7 @@ try {
 
     //Recipients
     $this->mail->setFrom('aallcenir.9000@gmail.com', 'Alcenir');
-    $this->mail->addAddress($RecipientEmail, $RecipientName);     // Add a recipient
+    $this->mail->addAddress($RecipientEmail);     // Add a recipient
     $this->mail->addReplyTo('aallcenir.9000@gmail.com', 'Alcenir');
 
     // Content
@@ -35,10 +35,10 @@ try {
     $this->mail->Body    = $Body;
     $this->mail->AltBody = strip_tags($Body);
 
-      if($this->mail->send()){
-    echo 'Message has been sent again';
+    if($this->mail->send()){
+        return true;
     }else{
-        echo "Nothing";
+        return false;
     }
     
 } catch (Exception $e) {
