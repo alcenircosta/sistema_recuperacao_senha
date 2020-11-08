@@ -15,6 +15,7 @@
 <div class="row">
   <div class="col-sm-5 offset-md-3">
   <?php
+
   $url = (isset($_GET['pagina'])) ? $_GET['pagina'] : 'inicio';
   $ext = '.php';
   load_pages($url,$ext);

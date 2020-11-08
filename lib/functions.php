@@ -22,7 +22,7 @@ function load_pages($url, $ext){
            
             if($valor > 0){
                 $dados = $get->fetch_assoc();
-                send_email($con, $dados['email']);
+                add_dados_recover($con,$email);
             }else{
 
             }
@@ -31,8 +31,23 @@ function load_pages($url, $ext){
         }
     }
 
+    function add_dados_recover($con, $email){
+        $hash = base64_encode(rand());
+        $sql = $con->prepare("INSERT INTO `recover_solicitation` (`email`, `hash`) VALUES (?,?)");
+        $sql->bind_param("ss", $email, $hash);
+        $sql->execute();
+
+        if($sql->affected_rows > 0){
+            send_email($con, $email);
+        }else{
+
+        }
+
+    }
+
     function send_email($con, $email){
-        echo $email;
+        // Aqui ta mail, mas é preciso utilizar o php mailer
+        // mail($email, "Sua nova senha", "Minha senha é essa..." );
     }
 
 ?>

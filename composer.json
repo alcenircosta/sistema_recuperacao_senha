@@ -1,0 +1,6 @@
+{
+    "name": "usuario/rec_senha",
+    "require": {
+        "phpmailer/phpmailer": "^6.1"
+    }
+}
