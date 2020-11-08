@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 08-Nov-2020 às 19:35
+-- Tempo de geração: 08-Nov-2020 às 23:46
 -- Versão do servidor: 10.4.11-MariaDB
 -- versão do PHP: 7.4.6
 
@@ -30,8 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `recover_solicitation` (
   `id` int(20) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `hash` varchar(100) NOT NULL,
-  `status` int(20) NOT NULL DEFAULT 0
+  `hash` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------

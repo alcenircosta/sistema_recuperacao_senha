@@ -66,7 +66,7 @@ function send_email($con, $email, $hash)
 
 function hash_check($con, $hash)
 {
-    $sql = $con->prepare("SELECT * FROM `recover_solicitation` WHERE `hash` =  ? AND `status` = 0");
+    $sql = $con->prepare("SELECT * FROM `recover_solicitation` WHERE `hash` =  ?");
     $sql->bind_param('s', $hash);
     $sql->execute();
     $get = $sql->get_result();
